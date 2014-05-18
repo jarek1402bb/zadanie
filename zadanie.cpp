@@ -21,14 +21,14 @@ public:
   virtual ~CSortowalna(){};
 };
 
-class CTrojkat: public CSortowalna{
+class CTrojkaLiczb: public CSortowalna{
 private:
   int a;
   int b;
   int c;
   
 public:
-  CTrojkat(int a, int b, int c){
+  CTrojkaLiczb(int a, int b, int c){
     this->a=a;
     this->b=b;
     this->c=c;
@@ -100,29 +100,34 @@ void Algorytmy::wypisz(int* t, int rozmiar)
   cout << endl;
 }
 
-void CTrojkat::sortuj()
+void CTrojkaLiczb::sortuj()
 {
-
+	Algorytmy::sortuj(a,b,c);
 }
 
-void CTrojkat::wypisz()
+void CTrojkaLiczb::wypisz()
 {
-  
+  Algorytmy::wypisz(a,b,c);
 }
 
 void CTablica::sortuj()
 {
-
+  Algorytmy::sortuj(tab,rozm);
 }
 void CTablica::wypisz()
 {
-
+  Algorytmy::wypisz(tab,rozm);
 }
 
 
 int main(){
  srand(time(NULL));
  
+ CSortowalna *t[] = new CSortowalna[12];
+ 
+// for (int i;i<12;i++)
+//   if (i%4==0)
+//     t[i]=
   
   return 0;
 }
