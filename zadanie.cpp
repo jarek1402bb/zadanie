@@ -123,14 +123,23 @@ void CTablica::wypisz()
 int main(){
  srand(time(NULL));
  
- CSortowalna *t[] = new CSortowalna[12];
+ CSortowalna **t = new CSortowalna* [12];
  
-// for (int i;i<12;i++)
-//   if (i%4==0)
-//     t[i]=
-  
+ for (int i=0;i<12;i++)
+   if (i%4==0){
+     t[i]= new CTrojkaLiczb(rand(),rand(),rand());
+   }
+   else
+     t[i]= new CTablica(i+3);
+   
+  for (int i=0; i<12; i++)
+    t[i]->wypisz();
+  cout << "----------------------" << endl;
+  for (int i=0; i<12; i++)
+    t[i]->sortuj();
+  for (int i=0; i<12; i++)
+    t[i]->wypisz();
+    
+   
   return 0;
 }
-
-
-  
